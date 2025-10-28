@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+  title: 'Publications | Han Lab (UPenn)',
+  description: 'Selected publications from Han Lab.',
+};
+
+const publications = [
+  // Replace with your real citations
+  {
+    year: 2025,
+    title: 'Example Paper Title',
+    authors: 'A. Author, B. Author',
+    venue: 'Conference/Journal',
+    link: '#',
+  },
+  {
+    year: 2024,
+    title: 'Another Paper Title',
+    authors: 'C. Author, D. Author',
+    venue: 'Conference/Journal',
+    link: '#',
+  },
+];
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="publications__section">
+      <h1>Publications</h1>
+      <p>Replace the examples below with your citations.</p>
+      <ul class="pubs__list">
+        {publications.map((p) => (
+          <li class="pub-item">
+            <p class="pub-item__title">{p.title}</p>
+            <p class="pub-item__meta">{p.authors} • {p.venue} • {p.year}</p>
+            {p.link && <p><a href={p.link} target="_blank" rel="noopener noreferrer">Link</a></p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+  .publications__section { margin: var(--section-margin) auto; }
+  .pubs__list {
+    margin: 1rem 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .pub-item { margin: 0 0 1rem 0; }
+  .pub-item__title { font-weight: 600; margin: 0 0 0.25rem 0; }
+  .pub-item__meta { opacity: 0.84; margin: 0; }
+</style>
+

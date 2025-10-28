@@ -1,0 +1,30 @@
+---
+import { Button, FormInput, FormSelect, FormTextarea } from '@components/odyssey-theme';
+
+const selectOptions = [
+  "Google Search",
+  "Social Media",
+  "Email",
+]
+
+---
+
+<form
+  action="https://submit-form.com/uvLDHK2nH"
+  method="POST"
+>
+  <input type="text" name="_honeypot" tabIndex="-1" autocomplete="off" hidden />
+  <FormInput type="text" label="Name" name="name" placeholder="John Doe" required />
+  <FormInput type="email" label="Email" name="email" placeholder="hello@example.com" required />
+  <FormSelect label="How Did You Hear About Us?" name="referralSource" options={selectOptions} required />
+  <FormTextarea label="Message" name="message" placeholder="Your message here..." required />
+  <Button>Submit</Button>
+</form>
+
+<style>
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+import ContactForm from '../components/forms/ContactForm.astro';
+import Layout from '../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+  title: 'Contact | Han Lab (UPenn)',
+  description: 'Contact Han Lab at the University of Pennsylvania.',
+};
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="contact-hero__section">
+      <div class="contact-hero__text-section">
+        <h1>Contact</h1>
+        <p>
+          Reach out for collaboration or opportunities. Update the email and
+          phone below to your lab’s contact details.
+        </p>
+        <div>
+          <p>
+            <em><a href="tel:0000000000">(000) 000-0000</a></em> •
+            <em><a href="mailto:lab@example.edu">lab@example.edu</a></em>
+          </p>
+        </div>
+      </div>
+      <div class="col-2__container">
+        <ContactForm />
+      </div>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+  .contact-hero__section {
+    margin: var(--section-margin) auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(90vh - var(--navbar-height));
+    gap: 3rem;
+  }
+  .contact-hero__text-section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--theme-surface-1);
+    border-radius: var(--theme-shape-radius);
+  }
+  .col-2__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    .contact-hero__section {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

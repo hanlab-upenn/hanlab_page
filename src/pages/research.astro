@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+  title: 'Research | Han Lab (UPenn)',
+  description: 'Research directions at Han Lab, University of Pennsylvania.',
+};
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="research__section">
+      <h1>Research</h1>
+      <p>Describe your research areas here. Add sections for each direction.</p>
+
+      <div class="research-card">
+        <h2>Area 1: Example</h2>
+        <p>Short overview of the research problem, approach, and impact.</p>
+      </div>
+
+      <div class="research-card">
+        <h2>Area 2: Example</h2>
+        <p>Short overview of the research problem, approach, and impact.</p>
+      </div>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+  .research__section { margin: var(--section-margin) auto; }
+  .research-card {
+    background-color: var(--theme-surface-1);
+    color: var(--theme-on-surface-1);
+    border-radius: var(--theme-shape-radius);
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+</style>
+

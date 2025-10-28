@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#ffffff"><!-- Primary Meta Tags --><title>Theme Setup</title><meta name="title" content="Theme Setup"><meta name="description" content="Learn how to setup Odyssey Theme's seo, logo, nav items, etc."><link rel="canonical" href="http://localhost:4321/theme/theme-setup/"><!-- Generator --><meta name="generator" content="Astro v4.15.9"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/theme/theme-setup/"><meta property="og:title" content="Theme Setup"><meta property="og:description" content="Learn how to setup Odyssey Theme's seo, logo, nav items, etc."><meta property="og:image" content="http://localhost:4321/assets/images/home/classic-hero.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/theme/theme-setup/"><meta property="twitter:title" content="Theme Setup"><meta property="twitter:description" content="Learn how to setup Odyssey Theme's seo, logo, nav items, etc."><meta property="twitter:image" content="http://localhost:4321/assets/images/home/classic-hero.jpg"><!-- For Demonstration of the themes --><!-- Google Analytics --><style>#article[data-astro-cid-gvpn4u4b]{padding-bottom:3rem}.post-header__container[data-astro-cid-gvpn4u4b]{max-width:var(--theme-blog-post-header-width);margin:1rem auto;padding:var(--container-padding)}.post-tags__list[data-astro-cid-gvpn4u4b]{margin:1rem auto;padding:0;list-style:none}.post-tags__tag[data-astro-cid-gvpn4u4b]{text-transform:uppercase}.post-tags__tag[data-astro-cid-gvpn4u4b] a[data-astro-cid-gvpn4u4b]{font-size:var(--font-size-sm);text-decoration:none}.post-layout__img[data-astro-cid-gvpn4u4b]{margin:0 auto 1rem;border-radius:var(--theme-shape-radius)}.post-layout__date[data-astro-cid-gvpn4u4b]{margin-bottom:1rem;opacity:.84}
+</style>
+<link rel="stylesheet" href="/_astro/consider-hybrid-work.CxHC7suW.css">
+<link rel="stylesheet" href="/_astro/contact.CXvZTT7p.css">
+<style>.header-actions[data-astro-cid-qo5xhe7c]{display:inline-flex;align-items:center;gap:.75rem}.header-actions[data-astro-cid-qo5xhe7c] .social-link[data-astro-cid-qo5xhe7c]{color:inherit;opacity:.84;text-decoration:none;display:inline-flex}.header-actions[data-astro-cid-qo5xhe7c] .social-link[data-astro-cid-qo5xhe7c]:hover{opacity:1}.header-actions[data-astro-cid-qo5xhe7c] .btn[data-astro-cid-qo5xhe7c]{background-color:#900;color:#fff;border-radius:.25rem;border:2px solid #990000}.header-actions[data-astro-cid-qo5xhe7c] .btn[data-astro-cid-qo5xhe7c]:hover{background-color:#7a0000;border-color:#7a0000}.lab-footer[data-astro-cid-qo5xhe7c]{background:#f1f3f5;color:var(--theme-on-bg);padding:3rem 0}.lab-footer__inner[data-astro-cid-qo5xhe7c]{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10rem}.lab-footer__crest[data-astro-cid-qo5xhe7c]{max-width:220px;width:100%;height:auto;justify-self:end}.lab-footer__logo[data-astro-cid-qo5xhe7c]{max-height:140px;width:auto}.lab-footer__socials[data-astro-cid-qo5xhe7c]{display:flex;gap:1rem;justify-content:center}.lab-footer__socials[data-astro-cid-qo5xhe7c]{justify-self:start}.lab-footer__social-link[data-astro-cid-qo5xhe7c]{color:inherit;opacity:.84}.lab-footer__social-link[data-astro-cid-qo5xhe7c]:hover{opacity:1}.lab-footer__meta[data-astro-cid-qo5xhe7c]{margin-top:2rem;text-align:center;font-size:var(--font-size-sm);color:#0009}@media (max-width: 768px){.lab-footer__inner[data-astro-cid-qo5xhe7c]{grid-template-columns:1fr;gap:1.5rem;justify-items:center}.lab-footer__crest[data-astro-cid-qo5xhe7c]{margin:0 auto;justify-self:center}.lab-footer__socials[data-astro-cid-qo5xhe7c]{justify-self:center}}
+</style><script type="module">
+</script>
+<script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowroot="open" shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = new DOMParser()
+	.parseFromString(
+		'<p><template shadowroot="open" shadowrootmode="open"></template></p>',
+		'text/html',
+		{
+			includeShadowRoots: !0,
+		}
+	)
+	.querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body> <a href="#content" data-astro-cid-c7ibh6fj>Skip to main content</a>   <script type="module">
+  const bodyElement = document.querySelector('body');
+  const menuButton = document.querySelector('#menuButton')
+  const navHeader = document.querySelector('#odysseyNavHeader');
+  const menuButtonIconHam = document.querySelector('#menuButtonIconHam');
+  const menuButtonIconClose = document.querySelector('#menuButtonIconClose');
+  let scrollPosition = 0;
+
+  if (menuButton) {
+    menuButton.addEventListener('click', toggleMenu)
+  }
+
+  function toggleMenu() {
+    menuButtonIconHam.toggleAttribute('hidden');
+    menuButtonIconClose.toggleAttribute('hidden');
+    
+    if (navHeader.hasAttribute('mobile-menu-open', true)) {
+      menuButton.title = "Open Main Menu"
+      // unlock scroll position
+      bodyElement.style.removeProperty('overflow');
+      bodyElement.style.removeProperty('position');
+      bodyElement.style.removeProperty('top');
+      bodyElement.style.removeProperty('width');
+      window.scrollTo(0, scrollPosition);
+    } else {
+      menuButton.title = "Close Main Menu"
+      // lock scroll position
+      scrollPosition = window.pageYOffset;
+      bodyElement.style.overflow = 'hidden';
+      bodyElement.style.position = 'fixed';
+      bodyElement.style.top = `-${scrollPosition}px`;
+      bodyElement.style.width = '100%';
+    }
+    
+    navHeader.toggleAttribute('mobile-menu-open');
+  }
+</script> <header id="odysseyNavHeader" class="header--right" data-astro-cid-3hxe222u> <div class="header-logo-menu__container" data-astro-cid-3hxe222u>  <a class="header-logo__link" href="/" data-astro-cid-3hxe222u> <span data-astro-cid-qo5xhe7c> <a class="lab-logo__link" href="/" title="Han Lab" data-astro-cid-tvrurpns> <span class="lab-logo__text" data-astro-cid-tvrurpns>Han Lab</span> </a>  </span> </a> </div> <div class="header-nav__container" data-astro-cid-3hxe222u>    </div> <div class="header-action-item__container" data-astro-cid-3hxe222u> <span class="header-actions" data-astro-cid-qo5xhe7c> <a class="social-link" href="https://scholar.google.com/citations?user=Hxm_OpAAAAAJ&hl=en" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer" data-astro-cid-qo5xhe7c> <svg width="28" height="28" viewBox="0 0 24 24" data-astro-cid-qo5xhe7c data-icon="ic:baseline-school">  <symbol id="ai:ic:baseline-school"><path fill="currentColor" d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3L1 9l11 6l9-4.91V17h2V9z"/></symbol><use xlink:href="#ai:ic:baseline-school"></use>  </svg> </a> <a class="social-link" href="https://www.linkedin.com/in/tianyu-han-33025512a/" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" data-astro-cid-qo5xhe7c> <svg width="28" height="28" viewBox="0 0 24 24" data-astro-cid-qo5xhe7c data-icon="mdi:linkedin">  <symbol id="ai:mdi:linkedin"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></symbol><use xlink:href="#ai:mdi:linkedin"></use>  </svg> </a> <a class="social-link" href="http://x.com/peterhan91" title="Twitter/X" aria-label="Twitter" target="_blank" rel="noopener noreferrer" data-astro-cid-qo5xhe7c> <svg width="28" height="28" viewBox="0 0 24 24" data-astro-cid-qo5xhe7c data-icon="mdi:twitter">  <symbol id="ai:mdi:twitter"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23"/></symbol><use xlink:href="#ai:mdi:twitter"></use>  </svg> </a> <a class="btn" href="/join" data-astro-cid-qo5xhe7c data-astro-cid-5sjhwv6c> Apply to Join </a>  </span> </div> </header>  <main id="content">   <div id="page" data-astro-cid-qo5xhe7c>  <div class="post-header__container" data-astro-cid-gvpn4u4b> <ul class="post-tags__list" data-astro-cid-gvpn4u4b>  </ul> <h1 data-astro-cid-gvpn4u4b>Theme Setup</h1> <p class="post-layout__date" data-astro-cid-gvpn4u4b> <time data-astro-cid-gvpn4u4b><em data-astro-cid-gvpn4u4b></em></time> </p>  </div> <div class="content__container content__container--narrow" data-astro-cid-swtg25lo>  <article id="article" data-astro-cid-gvpn4u4b> <p>After you’ve had some time to familiarize yourself with the the theme files you’re probably wondering “How do I make it my own?” This guide will help you swap out titles, descriptions, logos, etc.</p>
+<h2 id="global-seo">Global SEO</h2>
+<p>In the theme files you’ll find a <code>settings.js</code> file under the <code>src/config/</code> folder. The contents of the file should look something like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  title: </span><span style="color:#9ECBFF">`Odyssey Astro Theme | A Marketing Website Theme for Startups and Businesses`</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  description: </span><span style="color:#9ECBFF">`A simple, clean, and modern theme a startup or businesses&#39; marketing website.`</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  url: </span><span style="color:#9ECBFF">`https://odyssey-theme.sapling.supply`</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// No trailing slash!</span></span>
+<span class="line"><span style="color:#E1E4E8">  name: </span><span style="color:#9ECBFF">`Odyssey`</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// The short name of the business or brand name. Used for things like the copyright in the footer.</span></span>
+<span class="line"><span style="color:#E1E4E8">  enableThemeSwitcher: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">};  </span></span></code></pre>
+<p>The title and description fields here are used as the global defaults if one is not provided at the page level.</p>
+<h2 id="adding-your-own-logo">Adding Your Own Logo</h2>
+<p>Under <code>src/components/</code> you’ll see a <code>Logo.astro</code> file that should look something like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">&quot;odyssey-logo&quot;</span><span style="color:#E1E4E8">&gt;Odyssey&lt;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#B392F0">  .odyssey-logo</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">fit-content</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    margin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    font-family</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">var</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">--theme-font-family-serif</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#79B8FF">    font-size</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">var</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">--font-size-md</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#79B8FF">    color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">inherit</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#B392F0">  .odyssey-logo:hover</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    text-decoration</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">underline</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    cursor</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">pointer</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<p>The easiest way to swap out the Odyssey logo across the site is to replace this code with the SVG code for your company’s logo or using an <code>&lt;img&gt;</code> tag linked to your company logo.</p>
+<p>You should see that the Odyssey logo changes across the theme once this is updated.</p>
+<p>If you would like more control or don’t like this method of using a <code>&lt;Logo&gt;</code> component you will find most of the components also include a <code>&lt;slot&gt;</code> for the logo which will let you completely replace it.</p>
+<h2 id="open-graph--social-image">Open Graph / Social Image</h2>
+<p>The default Open Graph image is pointed at the hero artwork located at <code>/public/assets/images/home/classic-hero.jpg</code>. To swap in your own asset, update the <code>image</code> prop when using the <code>&lt;BaseHead /&gt;</code> component or change the default URL inside <code>src/components/head/BaseHead.astro</code> to reference a file that you place under the <code>public/</code> directory.</p>
+<h2 id="navigation-items">Navigation Items</h2>
+<p>Customizing the navigation items is easily done by editing the array of items in the <code>nav.js</code> file found under the <code>src/config/</code> folder.</p>
+<p>It will look something like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> nav</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">&#39;Home&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    slug: </span><span style="color:#9ECBFF">&#39;/&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">&#39;Blog&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    slug: </span><span style="color:#9ECBFF">&#39;/blog&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">&#39;About&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    slug: </span><span style="color:#9ECBFF">&#39;/company/about&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">&#39;Contact&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    slug: </span><span style="color:#9ECBFF">&#39;/company/contact&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<h2 id="footer-links">Footer Links</h2>
+<p>In the <code>src/config/</code> folder you’ll find at <code>footer.js</code> file which is where the footer social icons, social links, and the footer nav items are updated.</p>
+<h3 id="social-links">Social Links</h3>
+<p>The social links list will look something like this.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> footerSocials</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    url: </span><span style="color:#9ECBFF">&#39;https://instagram.com/&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: instagramIcon,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    url: </span><span style="color:#9ECBFF">&#39;https://youtube.com/&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: youtubeIcon,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    url: </span><span style="color:#9ECBFF">&#39;https://twitter.com/jaydanurwin&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: twitterIcon,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    url: </span><span style="color:#9ECBFF">&#39;https://github.com/treefarmstudio/odyssey-theme&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: githubIcon,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span></code></pre>
+<p>The URLs are already set to safely open a new tab for the user when clicked so simply change our the URLs if you’re happy with the icons provided.</p>
+<p>However, if you’d like to customize the icons you can do this by providing your own icon SVGs in the <code>icons.js</code> file under the <code>src/icons/</code> folder.</p>
+<h3 id="footer-link-lists">Footer Link Lists</h3>
+<p>Similar to the top-level nav items you’ll see a <code>footerLists</code> array in <code>footer.js</code></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> footerLists</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  {</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">&#39;Landing Pages&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    items: [</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#E1E4E8">        title: </span><span style="color:#9ECBFF">&#39;Landing Page 1&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        slug: </span><span style="color:#9ECBFF">&#39;/landing-pages/landing-1&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#E1E4E8">        title: </span><span style="color:#9ECBFF">&#39;Landing Page 2&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        slug: </span><span style="color:#9ECBFF">&#39;/landing-pages/landing-2&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#F97583">  ...</span></span></code></pre>
+<p>The title is the non-clickable title of the list and the nested items array is the list of links under that title. Feel free to customize the lists as needed.</p>
+<h2 id="sitemap">Sitemap</h2>
+<p>Odyssey Theme will automatically generate a <code>sitemap.xml</code> file for you using Astro’s <code>@astrojs/sitemap</code> integration.</p>
+<p>To setup the sitemap with the correct URLs you will need to open the <code>astro.config.mjs</code> at the base level of the theme files which should look something like this</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { defineConfig } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> &#39;astro/config&#39;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> lit </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> &#39;@astrojs/lit&#39;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> sitemap </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> &quot;@astrojs/sitemap&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// https://astro.build/config</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#B392F0"> defineConfig</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  site: </span><span style="color:#9ECBFF">&#39;https://odyssey-theme.sapling.supply/&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">  // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.</span></span>
+<span class="line"><span style="color:#E1E4E8">  sitemap: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">  // Generate sitemap (set to &quot;false&quot; to disable)</span></span>
+<span class="line"><span style="color:#E1E4E8">  integrations: [</span><span style="color:#B392F0">lit</span><span style="color:#E1E4E8">(), </span><span style="color:#B392F0">sitemap</span><span style="color:#E1E4E8">()] </span><span style="color:#6A737D">// Add renderers to the config</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>Simply edit the <code>site:</code> field with the live URL that your website will be hosted on and you’re all set!</p> </article>  </div>   </div>   </main> <footer class="lab-footer" data-astro-cid-qo5xhe7c> <div class="content__container " data-astro-cid-swtg25lo>  <div class="lab-footer__inner" data-astro-cid-qo5xhe7c> <img class="lab-footer__crest" src="/assets/upenn-logo.png" alt="University of Pennsylvania logo" loading="lazy" data-astro-cid-qo5xhe7c> <img class="lab-footer__logo" src="/assets/lab-logo.png" alt="Han Lab logo" loading="lazy" data-astro-cid-qo5xhe7c> <div class="lab-footer__socials" data-astro-cid-qo5xhe7c> <a class="lab-footer__social-link" href="https://www.linkedin.com/in/tianyu-han-33025512a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-astro-cid-qo5xhe7c> <svg width="28" height="28" viewBox="0 0 24 24" data-astro-cid-qo5xhe7c data-icon="mdi:linkedin">  <use xlink:href="#ai:mdi:linkedin"></use>  </svg> </a> <a class="lab-footer__social-link" href="http://x.com/peterhan91" target="_blank" rel="noopener noreferrer" aria-label="Twitter" data-astro-cid-qo5xhe7c> <svg width="28" height="28" viewBox="0 0 24 24" data-astro-cid-qo5xhe7c data-icon="mdi:twitter">  <use xlink:href="#ai:mdi:twitter"></use>  </svg> </a> </div> </div> <div class="lab-footer__meta" data-astro-cid-qo5xhe7c> <p data-astro-cid-qo5xhe7c>&copy; 2025 Han Lab. All rights reserved.</p> </div>  </div>  </footer> </body></html>  

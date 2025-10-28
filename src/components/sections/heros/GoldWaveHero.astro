@@ -1,0 +1,66 @@
+---
+import { Button, Container } from '@components/odyssey-theme';
+const { title, subtitle, ctaHref = '/join', ctaText = 'Apply to Join', crestSrc, crestAlt = '', showCta = true } = Astro.props;
+---
+
+<section class="gold-hero">
+  <Container>
+    <div class="gold-hero__inner">
+      {crestSrc && <img class="gold-hero__crest" src={crestSrc} alt={crestAlt} loading="lazy" />}
+      {title && <h1 class="gold-hero__title">{title}</h1>}
+      {subtitle && <p class="gold-hero__subtitle">{subtitle}</p>}
+      {showCta && <Button class="gold-hero__cta" href={ctaHref} outlined>{ctaText}</Button>}
+    </div>
+  </Container>
+  <svg class="gold-hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,90 C360,120 1080,60 1440,90 L1440,120 L0,120 Z" fill="currentColor"></path>
+  </svg>
+</section>
+
+<style>
+  .gold-hero {
+    position: relative;
+    /* Very light blue background */
+    --hero-base: #d6e8ff; /* slightly darker light blue */
+    background-color: var(--hero-base);
+    color: var(--theme-on-bg);
+  }
+  .gold-hero__inner {
+    margin: 0 auto;
+    padding: 12vh 0 10vh 0;
+    text-align: left;
+    max-width: 960px;
+    position: relative;
+    z-index: 1; /* keep interactive content above the decorative wave */
+  }
+  .gold-hero__crest { height: 84px; width: auto; margin-bottom: 1.25rem; }
+  .gold-hero__title {
+    margin: 0 0 0.875rem 0;
+    font-size: clamp(2.1rem, 4.2vw, 3.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+  }
+  .gold-hero__subtitle {
+    max-width: 900px;
+    margin: 0 0 2.25rem 0;
+    line-height: 1.65;
+    font-size: clamp(0.95rem, 0.95vw, 1.125rem);
+  }
+  :global(.gold-hero__cta) {
+    margin: 1.5rem 0 0 0;
+    background-color: #101010;
+    color: #ffffff;
+    border: 2px solid #101010;
+    display: inline-flex;
+  }
+  :global(.gold-hero__cta:hover) {
+    background-color: #000000;
+    border-color: #000000;
+  }
+  .gold-hero__wave {
+    color: var(--hero-edge-color, var(--hero-base));
+    position: absolute;
+    left: 0; right: 0; bottom: -1px; height: 120px; width: 100%;
+    pointer-events: none; /* prevent the wave from blocking button clicks */
+  }
+</style>

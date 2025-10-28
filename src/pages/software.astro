@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+  title: 'Software | Han Lab (UPenn)',
+  description: 'Open-source software and datasets from Han Lab.',
+};
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="software__section">
+      <h1>Software</h1>
+      <p>List your tools, libraries, datasets, and links here.</p>
+      <ul class="software__list">
+        <li>
+          <strong>Project Name</strong> — Short description. <a href="#">GitHub</a>
+        </li>
+      </ul>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+  .software__section { margin: var(--section-margin) auto; }
+  .software__list { margin: 1rem 0 0 0; }
+</style>
+

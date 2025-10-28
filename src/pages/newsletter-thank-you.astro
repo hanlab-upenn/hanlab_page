@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+  title: 'Subscribed | Han Lab (UPenn)',
+  description: 'Thanks for subscribing to our newsletter.',
+};
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="thankyou__section">
+      <h1>Thanks for subscribing</h1>
+      <p>You’re on the list. We’ll share updates as they happen.</p>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+  .thankyou__section { margin: var(--section-margin) auto; }
+</style>
+

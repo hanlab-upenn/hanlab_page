@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+  title: 'Join | Han Lab (UPenn)',
+  description: 'Opportunities to join Han Lab at UPenn.',
+};
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="join__section">
+      <h1>Join Han Lab</h1>
+      <p>
+        We actively recruit curious, mission-driven students and researchers—reach out at <a href="mailto:tianyu.han@pennmedicine.upenn.edu">tianyu.han@pennmedicine.upenn.edu</a> to start the conversation.
+      </p>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+  .join__section { margin: var(--section-margin) auto; }
+</style>

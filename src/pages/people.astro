@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+  title: 'People | Han Lab (UPenn)',
+  description: 'Meet the members of Han Lab at the University of Pennsylvania.',
+};
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="people__section">
+      <h1>People</h1>
+      <p>Replace the sample entries below with your team members.</p>
+      <ul class="people-grid__list">
+        <li class="person-card">
+          <div class="person-card__image" aria-hidden="true"></div>
+          <h3>Professor First Last</h3>
+          <p><em>Principal Investigator</em></p>
+          <p>Short bio or research interest.</p>
+        </li>
+        <li class="person-card">
+          <div class="person-card__image" aria-hidden="true"></div>
+          <h3>Student First Last</h3>
+          <p><em>PhD Student</em></p>
+          <p>Short bio or research interest.</p>
+        </li>
+        <li class="person-card">
+          <div class="person-card__image" aria-hidden="true"></div>
+          <h3>Researcher First Last</h3>
+          <p><em>Postdoctoral Fellow</em></p>
+          <p>Short bio or research interest.</p>
+        </li>
+      </ul>
+    </section>
+  </Container>
+  
+</Layout>
+
+<style>
+  .people__section {
+    margin: var(--section-margin) auto;
+  }
+  .people-grid__list {
+    margin: 2rem 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--theme-grid-gap);
+  }
+  .person-card {
+    background-color: var(--theme-surface-1);
+    color: var(--theme-on-surface-1);
+    border-radius: var(--theme-shape-radius);
+    padding: 1rem;
+  }
+  .person-card__image {
+    height: 180px;
+    background-color: rgba(0,0,0,0.08);
+    border-radius: calc(var(--theme-shape-radius)/2);
+    margin-bottom: 0.75rem;
+  }
+  @media (max-width: 1024px) {
+    .people-grid__list { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .people-grid__list { grid-template-columns: 1fr; }
+  }
+</style>
+

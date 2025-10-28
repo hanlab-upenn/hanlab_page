@@ -1,0 +1,118 @@
+---
+import { Container } from '@components/odyssey-theme';
+
+import Layout from '../layouts/Page.astro';
+import GoldWaveHero from '../components/sections/heros/GoldWaveHero.astro';
+import AutoGallery from '../components/core/AutoGallery.astro';
+---
+
+<Layout>
+  <GoldWaveHero
+    crestSrc="/assets/upenn-wordmark.png"
+    crestAlt="University of Pennsylvania"
+    title="Welcome to the Han Lab"
+    subtitle="At Han Lab, we drive the next generation of medical artificial intelligence to elevate human expertise to a global scale. Our mission is to build powerful AI and machine learning systems that redefine diagnosis, accelerate discovery, and improve patient outcomes. By uniting breakthroughs in algorithmic innovation, massive multimodal data integration, and clinically validated impact studies, we aim to transform the practice of radiology, emergency medicine, and the broader landscape of precision healthcare."
+  />
+
+  <Container>
+    <section class="research__section">
+      <div class="research__grid">
+        <div class="research__left">
+          <img class="research__logo-img" src="/assets/research-logo.png" alt="Han Lab and Perelman Radiology" />
+          <div class="lab-members">
+            <h3>Lab Members</h3>
+            <ul class="people__list">
+              <li><a href="https://aibil.med.upenn.edu/people/tianyu-han-phd/" target="_blank" rel="noopener noreferrer">Prof. Tianyu Han</a> · Principal Investigator</li>
+              <li><a href="https://haifangong.github.io/" target="_blank" rel="noopener noreferrer">Dr. Haifan Gong</a> · Postdoctoral Fellow</li>
+              <li><a href="https://scholar.google.com/citations?user=-4XmJMEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Dr. Yuqi Wang</a> · Postdoctoral Fellow</li>
+              <li>Akis Giannoukos · Intern</li>
+              <li>Meera Desikan · Intern</li>
+              <li>Jessica Incmikoski · Coordinator</li>
+              <li><a href="/join">+ Join the Lab</a></li>
+            </ul>
+          </div>
+          <div class="lab-gallery">
+            <AutoGallery images={[ '/assets/papers/paper_1.png', '/assets/papers/paper_2.png' ]} interval={4000} />
+          </div>
+        </div>
+        <div>
+          <h2>Research</h2>
+          <p>Our group leads the development of next-generation Generative and Agentic Medical AI systems that reason like clinicians, integrate diverse data modalities, and communicate seamlessly through images and language.</p>
+          <h3>Generative AI</h3>
+          <p>
+            My research develops generative models that provide clinicians with predictive insights to support medical decision-making. I introduced DiffChest (<a href="https://www.sciencedirect.com/science/article/pii/S2666379124004348" target="_blank" rel="noopener noreferrer">Han, Cell Rep Med 24</a>), a self-conditioned diffusion model trained on large-scale patient data to generate patient-specific counterfactuals and identify confounding factors, thereby improving the robustness and interpretability of AI systems. In parallel, I leveraged generative adversarial networks to address key challenges in prediction (<a href="https://www.nature.com/articles/s42256-022-00560-x" target="_blank" rel="noopener noreferrer">Han, Nature Mach Intell 22</a>) and data sharing (<a href="https://www.science.org/doi/full/10.1126/sciadv.abb7973" target="_blank" rel="noopener noreferrer">Han, Sci Adv 20</a>). A generative model-based framework I developed predicts osteoarthritis progression by synthesizing future radiographs, achieving accuracy surpassing radiologists up to eight years in advance (<a href="https://www.nature.com/articles/s42256-022-00560-x" target="_blank" rel="noopener noreferrer">Han, Nature Mach Intell 22</a>). I also proposed generating high-resolution synthetic medical images to preserve privacy while enhancing model performance and data diversity through synthetic augmentation of underrepresented disease profiles (<a href="https://www.science.org/doi/full/10.1126/sciadv.abb7973" target="_blank" rel="noopener noreferrer">Han, Sci Adv 20</a>).
+          </p>
+          <h3>Agentic AI</h3>
+          <p>
+            We develop medical large language models that integrate visual and textual reasoning to support clinical decision-making. In collaboration with Charité - Berlin University Medicine, I co-developed MedAlpaca (<a href="https://arxiv.org/abs/2304.08247" target="_blank" rel="noopener noreferrer">Han, arxiv 23</a>), an open-source LLM fine-tuned on the Medical Meadow dataset of ~900,000 medical QA pairs, achieving significant gains in clinical accuracy. I also evaluated GPT-4V on NEJM and JAMA cases (<a href="https://jamanetwork.com/journals/jama/fullarticle/2816270" target="_blank" rel="noopener noreferrer">Han, JAMA 24</a>), showing superior multimodal reasoning, and co-led a Nature Communications study demonstrating GPT-4's ability to autonomously build ML models from raw clinical trial data (<a href="https://www.nature.com/articles/s41467-024-45879-8" target="_blank" rel="noopener noreferrer">Tayebi Arasteh, Nature Comm 24</a>). Our ongoing work focuses on developing agentic systems for automated diagnosis using multimodal EHR data in emergency medicine and for cancer biomarker discovery through integrative imaging-genomic modeling.
+          </p>
+          <h3>Interpretable & Robust Medical AI</h3>
+          <p>
+            We study the vulnerabilities and ethical challenges of AI in medicine, focusing on misinformation and adversarial robustness. Our work showed that altering just 1% of an LLM's parameters can implant false biomedical knowledge, underscoring risks in AI-generated medical advice (<a href="https://www.nature.com/articles/s41746-024-01282-7" target="_blank" rel="noopener noreferrer">Han, NPJ Digital Med 24</a>). We further demonstrated that while CNNs are highly vulnerable to adversarial attacks in pathology (<a href="https://www.nature.com/articles/s41467-021-24464-3" target="_blank" rel="noopener noreferrer">Han, Nature Comm 21</a>), vision transformers (ViTs) exhibit markedly greater robustness. Extending this analysis (<a href="https://www.nature.com/articles/s41467-022-33266-0" target="_blank" rel="noopener noreferrer">Ghaffari Laleh, Nature Comm 22</a>), we revealed that even diffusion-based MRI reconstruction models remain susceptible to subtle k-space perturbations that can produce misleading anatomical artifacts (<a href="https://link.springer.com/chapter/10.1007/978-3-031-72104-5_49" target="_blank" rel="noopener noreferrer">Han, MICCAI 24</a>).
+          </p>
+        </div>
+      </div>
+    </section>
+  </Container>
+
+  <Container>
+    <section class="contact__section">
+      <div>
+        <h2>Get Involved</h2>
+        <p>Join our mission to advance AI-driven solutions in medicine through collaboration, support, or by applying to join the group.</p>
+        <p><strong>Students:</strong> We welcome applicants from CS, engineering, and medicine. See <a href="/join">openings</a>.</p>
+        <p><strong>Collaborations:</strong> We partner with clinicians, institutions, and industry. Reach out using the form.</p>
+      </div>
+      <div>
+        <form
+          action="https://submit-form.com/uvLDHK2nH"
+          method="POST"
+          class="contact__form"
+        >
+          <input type="text" name="_honeypot" tabIndex="-1" autocomplete="off" hidden />
+          <div class="form-row">
+            <input type="text" name="firstName" placeholder="First Name" required />
+            <input type="text" name="lastName" placeholder="Last Name" required />
+          </div>
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" rows="6" required></textarea>
+          <button class="btn btn--outlined" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+.research__section { margin: var(--section-margin) auto; }
+.research__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2rem; align-items: start; }
+.research__logo-img { max-width: 480px; width: 100%; height: auto; display: block; }
+/* Make Research headers smaller than global defaults */
+.research__section h2 { font-size: var(--font-size-lg); }
+.research__section h3 { font-size: var(--font-size-md); }
+/* Lab members block below the logo */
+.lab-members { margin-top: 4rem; }
+.lab-gallery { margin-top: 4rem; }
+
+.people__list { margin: 0.5rem 0 0 0; padding: 0; list-style: none; }
+.people__list li { margin: 0 0 0.35rem 0; }
+
+.contact__section {
+  margin: var(--section-margin) auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;
+}
+.contact__form { display: grid; gap: 0.75rem; }
+.contact__form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.contact__form input, .contact__form textarea {
+  width: 100%; padding: 0.5rem; border: 2px solid #bbb; border-radius: 0.25rem;
+}
+.btn--outlined {
+  color: var(--theme-primary);
+  background-color: transparent;
+  border: 2px solid var(--theme-primary);
+  padding: 0.36rem 0.92rem; border-radius: var(--theme-button-border-radius);
+}
+@media (max-width: 900px) {
+  .research__grid, .two-col__section, .contact__section { grid-template-columns: 1fr; }
+}
+</style>
