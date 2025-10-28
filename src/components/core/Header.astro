@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 const { navData, rightMenu } = Astro.props;
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <script type="module">
@@ -51,7 +52,7 @@ const { navData, rightMenu } = Astro.props;
       <Icon name="ic:baseline-close" width="24px" height="24px" />
     </span>
   </button>}
-  <a class="header-logo__link" href="/">
+  <a class="header-logo__link" href={`${BASE_URL}`}>
     <slot name="logo">
     </slot>
   </a>
@@ -61,7 +62,7 @@ const { navData, rightMenu } = Astro.props;
       {navData && <nav>
         <ul>
           {navData.map(navItem => (
-            (<li><a href={navItem.slug} >{navItem.title}</a></li>)
+            (<li><a href={navItem.slug && navItem.slug.startsWith('/') ? `${BASE_URL}${navItem.slug.slice(1)}` : navItem.slug} >{navItem.title}</a></li>)
           ))}
         </ul>
       </nav>}

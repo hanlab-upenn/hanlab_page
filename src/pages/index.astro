@@ -8,7 +8,7 @@ import AutoGallery from '../components/core/AutoGallery.astro';
 
 <Layout>
   <GoldWaveHero
-    crestSrc="/assets/upenn-wordmark.png"
+    crestSrc={`${import.meta.env.BASE_URL}assets/upenn-wordmark.png`}
     crestAlt="University of Pennsylvania"
     title="Welcome to the Han Lab"
     subtitle="At Han Lab, we drive the next generation of medical artificial intelligence to elevate human expertise to a global scale. Our mission is to build powerful AI and machine learning systems that redefine diagnosis, accelerate discovery, and improve patient outcomes. By uniting breakthroughs in algorithmic innovation, massive multimodal data integration, and clinically validated impact studies, we aim to transform the practice of radiology, emergency medicine, and the broader landscape of precision healthcare."
@@ -18,7 +18,7 @@ import AutoGallery from '../components/core/AutoGallery.astro';
     <section class="research__section">
       <div class="research__grid">
         <div class="research__left">
-          <img class="research__logo-img" src="/assets/research-logo.png" alt="Han Lab and Perelman Radiology" />
+          <img class="research__logo-img" src={`${import.meta.env.BASE_URL}assets/research-logo.png`} alt="Han Lab and Perelman Radiology" />
           <div class="lab-members">
             <h3>Lab Members</h3>
             <ul class="people__list">
@@ -28,11 +28,11 @@ import AutoGallery from '../components/core/AutoGallery.astro';
               <li>Akis Giannoukos · Intern</li>
               <li>Meera Desikan · Intern</li>
               <li>Jessica Incmikoski · Coordinator</li>
-              <li><a href="/join">+ Join the Lab</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}join`}>+ Join the Lab</a></li>
             </ul>
           </div>
           <div class="lab-gallery">
-            <AutoGallery images={[ '/assets/papers/paper_1.png', '/assets/papers/paper_2.png' ]} interval={4000} />
+            <AutoGallery images={[ `${import.meta.env.BASE_URL}assets/papers/paper_1.png`, `${import.meta.env.BASE_URL}assets/papers/paper_2.png` ]} interval={4000} />
           </div>
         </div>
         <div>
@@ -60,7 +60,7 @@ import AutoGallery from '../components/core/AutoGallery.astro';
       <div>
         <h2>Get Involved</h2>
         <p>Join our mission to advance AI-driven solutions in medicine through collaboration, support, or by applying to join the group.</p>
-        <p><strong>Students:</strong> We welcome applicants from CS, engineering, and medicine. See <a href="/join">openings</a>.</p>
+        <p><strong>Students:</strong> We welcome applicants from CS, engineering, and medicine. See <a href={`${import.meta.env.BASE_URL}join`}>openings</a>.</p>
         <p><strong>Collaborations:</strong> We partner with clinicians, institutions, and industry. Reach out using the form.</p>
       </div>
       <div>

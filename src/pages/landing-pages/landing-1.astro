@@ -20,7 +20,7 @@ const seo = {
 
 <AnnouncementBar
 	text="Read Our Latest Blog Post"
-	href="/blog/posts/remote-work-mental-health/"
+	href={`${import.meta.env.BASE_URL}blog/posts/remote-work-mental-health/`}
 	slot="announcement-bar"
 />
 <Layout {seo}>
@@ -30,7 +30,7 @@ const seo = {
 			<p>Use Odyssey Theme to jumpstart your company's marketing website.</p>
 		</div>
 		<div slot="btns-container">
-			<Button href="/theme/get-started" customIcon
+			<Button href={`${import.meta.env.BASE_URL}theme/get-started`} customIcon
 				>Get Started <Fragment slot="icon">
 					<Icon name="ic:baseline-chevron-right" />
 				</Fragment></Button
@@ -38,7 +38,7 @@ const seo = {
 		</div>
 		<picture slot="image-container">
 			<img
-				src="/assets/images/landing-1/landing-hero-1.jpg"
+				src={`${import.meta.env.BASE_URL}assets/images/landing-1/landing-hero-1.jpg`}
 				alt="Astro Odyssee"
 				id="home-hero-image"
 			/>
@@ -113,7 +113,7 @@ const seo = {
 		</div>
 		<picture slot="image-container">
 			<img
-				src="/assets/images/landing-1/landing-sticky.jpg"
+				src={`${import.meta.env.BASE_URL}assets/images/landing-1/landing-sticky.jpg`}
 				alt="Astro Odyssey"
 				loading="lazy"
 			/>
@@ -129,7 +129,7 @@ const seo = {
 			It only takes a couple clicks to have a new, modern website for your
 			business or startup.
 		</p>
-		<Button href="/theme/get-started" customIcon
+		<Button href={`${import.meta.env.BASE_URL}theme/get-started`} customIcon
 			>Get Started <Fragment slot="icon">
 				<Icon name="ic:baseline-chevron-right" />
 			</Fragment></Button

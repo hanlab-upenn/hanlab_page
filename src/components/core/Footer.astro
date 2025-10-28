@@ -41,7 +41,7 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
             <ul class="footer-link__list">
               {list.items.map((item) => (
                 <li>
-                  <a href={item.slug}>{item.title}</a>
+                  <a href={item.slug && item.slug.startsWith('/') ? `${import.meta.env.BASE_URL}${item.slug.slice(1)}` : item.slug}>{item.title}</a>
                 </li>
               ))}
             </ul>

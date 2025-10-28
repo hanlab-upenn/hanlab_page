@@ -28,7 +28,7 @@ const { seo } = Astro.props as Props;
       <a class="social-link" href="http://x.com/peterhan91" title="Twitter/X" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
         <Icon name="mdi:twitter" width="28" height="28" />
       </a>
-      <Button href="/join">Apply to Join</Button>
+      <Button href={`${import.meta.env.BASE_URL}join`}>Apply to Join</Button>
     </span>
 	</Header>
 	<div id="page">
@@ -39,13 +39,13 @@ const { seo } = Astro.props as Props;
 			<div class="lab-footer__inner">
 				<img
 					class="lab-footer__crest"
-					src="/assets/upenn-logo.png"
+					src={`${import.meta.env.BASE_URL}assets/upenn-logo.png`}
 					alt="University of Pennsylvania logo"
 					loading="lazy"
 				/>
 				<img
 					class="lab-footer__logo"
-					src="/assets/lab-logo.png"
+					src={`${import.meta.env.BASE_URL}assets/lab-logo.png`}
 					alt="Han Lab logo"
 					loading="lazy"
 				/>

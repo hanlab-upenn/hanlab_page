@@ -109,20 +109,21 @@ export class ThemeSwitcher extends LitElement {
 		this._doc.setAttribute('data-theme', theme);
 
     const _heroImage = document.querySelector('#home-hero-image') as HTMLImageElement;
+		const BASE_URL = import.meta.env.BASE_URL;
 		if (theme === 'default') {
-			_heroImage.src = '/assets/images/home/classic-hero.jpg';
+			_heroImage.src = `${BASE_URL}assets/images/home/classic-hero.jpg`;
 		}
 		if (theme === 'dark') {
-			_heroImage.src = '/assets/images/home/dark-hero.jpg';
+			_heroImage.src = `${BASE_URL}assets/images/home/dark-hero.jpg`;
 		}
 		if (theme === 'earth') {
-			_heroImage.src = '/assets/images/home/earth-hero.jpg';
+			_heroImage.src = `${BASE_URL}assets/images/home/earth-hero.jpg`;
 		}
 		if (theme === 'ocean') {
-			_heroImage.src = '/assets/images/home/ocean-hero.jpg';
+			_heroImage.src = `${BASE_URL}assets/images/home/ocean-hero.jpg`;
 		}
 		if (theme === 'sand') {
-			_heroImage.src = '/assets/images/home/sand-hero.jpg';
+			_heroImage.src = `${BASE_URL}assets/images/home/sand-hero.jpg`;
 		}
 		localStorage.setItem('theme', theme);
 		this.theme = theme;

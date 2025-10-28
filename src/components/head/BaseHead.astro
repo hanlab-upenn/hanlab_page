@@ -20,7 +20,7 @@ const image = new URL(Astro.props.image || '/assets/images/home/classic-hero.jpg
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href={new URL('/favicon.svg', Astro.site)} type="image/svg+xml" />
 <meta name="theme-color" content="#ffffff" />
 <!-- Primary Meta Tags -->
 <title>{title}</title>
