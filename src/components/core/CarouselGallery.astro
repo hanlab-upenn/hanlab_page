@@ -1,0 +1,204 @@
+---
+const { images = [], interval = 2500, autoplay = true } = Astro.props as { images: string[]; interval?: number; autoplay?: boolean };
+const componentId = `carousel-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+{images.length > 0 ? (
+  <div
+    id={componentId}
+    class="carousel-gallery"
+    data-length={images.length}
+    data-interval={interval}
+    data-autoplay={autoplay ? 'true' : 'false'}
+    tabindex="0"
+  >
+    <div class="carousel-stage">
+      <div class="carousel-frame">
+        {images.map((src, index) => (
+          <img
+            src={src}
+            loading="lazy"
+            alt={`publication-${index + 1}`}
+            data-slide
+            class={`carousel-slide${index === 0 ? ' is-active' : ''}`}
+          />
+        ))}
+      </div>
+    </div>
+    <div class="carousel-dots" role="tablist" aria-label="Select publication">
+      {images.map((_src, index) => (
+        <button
+          type="button"
+          class={`carousel-dot${index === 0 ? ' is-active' : ''}`}
+          data-dot={index}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+) : null}
+
+<style>
+  .carousel-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: min(100%, 640px);
+  }
+
+  .carousel-stage {
+    position: relative;
+    width: 100%;
+  }
+
+  .carousel-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transform: translateY(10px) scale(0.988);
+    transition: opacity 200ms ease, transform 220ms ease;
+    pointer-events: none;
+    background: transparent;
+  }
+
+  .carousel-slide.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
+
+  .carousel-dot {
+    width: 0.75rem;
+    aspect-ratio: 1 / 1;
+    min-width: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #c8ccd5;
+    cursor: pointer;
+    transition: transform 140ms ease, background 140ms ease;
+  }
+
+  .carousel-dot.is-active {
+    background: var(--theme-primary, #00437c);
+    transform: scale(1.3);
+  }
+
+  .carousel-dot:focus-visible {
+    outline: 2px solid var(--theme-primary, #00437c);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 900px) {
+    .carousel-gallery {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script type="module" define:vars={{ componentId }}>
+  const initCarousel = () => {
+    const container = document.getElementById(componentId);
+    if (!container) return;
+
+    const slides = Array.from(container.querySelectorAll('[data-slide]'));
+    const dots = Array.from(container.querySelectorAll('[data-dot]'));
+    const total = slides.length;
+
+    if (total === 0) return;
+
+    const switchInterval = Number(container.dataset.interval) || 5000;
+    const shouldAutoplay = container.dataset.autoplay !== 'false';
+    let timerId;
+
+    let index = slides.findIndex((slide) => slide.classList.contains('is-active'));
+    if (index === -1) {
+      index = 0;
+      slides[0]?.classList.add('is-active');
+      dots[0]?.classList.add('is-active');
+    }
+
+    const setActive = (targetIndex, { pause = false } = {}) => {
+      const normalized = ((targetIndex % total) + total) % total;
+      if (normalized === index) return;
+      slides[index]?.classList.remove('is-active');
+      dots[index]?.classList.remove('is-active');
+      index = normalized;
+      slides[index]?.classList.add('is-active');
+      dots[index]?.classList.add('is-active');
+
+      if (pause) {
+        resetTimer();
+      }
+    };
+
+    const startTimer = () => {
+      if (!shouldAutoplay) return;
+      stopTimer();
+      timerId = window.setInterval(() => {
+        setActive(index + 1);
+      }, switchInterval);
+    };
+
+    const stopTimer = () => {
+      if (timerId) {
+        window.clearInterval(timerId);
+        timerId = undefined;
+      }
+    };
+
+    const resetTimer = () => {
+      stopTimer();
+      startTimer();
+    };
+
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', () => setActive(dotIndex, { pause: true }));
+    });
+
+    container.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        setActive(index - 1, { pause: true });
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        setActive(index + 1, { pause: true });
+      }
+    });
+
+    startTimer();
+
+    if (shouldAutoplay) {
+      container.addEventListener('mouseenter', stopTimer);
+      container.addEventListener('mouseleave', resetTimer);
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel, { once: true });
+  } else {
+    initCarousel();
+  }
+</script>

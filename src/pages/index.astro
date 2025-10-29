@@ -4,6 +4,9 @@ import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import GoldWaveHero from '../components/sections/heros/GoldWaveHero.astro';
 import AutoGallery from '../components/core/AutoGallery.astro';
+import CarouselGallery from '../components/core/CarouselGallery.astro';
+
+const publicationImages = Array.from({ length: 10 }, (_, index) => `${import.meta.env.BASE_URL}assets/publications/paper_${index + 1}.png`);
 ---
 
 <Layout>
@@ -33,6 +36,7 @@ import AutoGallery from '../components/core/AutoGallery.astro';
             </ul>
           </div>
           <div class="lab-gallery">
+            <CarouselGallery images={publicationImages} autoplay={false} />
             <AutoGallery images={[ `${import.meta.env.BASE_URL}assets/papers/paper_1.png`, `${import.meta.env.BASE_URL}assets/papers/paper_2.png` ]} interval={4000} />
           </div>
         </div>
@@ -93,7 +97,14 @@ import AutoGallery from '../components/core/AutoGallery.astro';
 .research__section h3 { font-size: var(--font-size-md); }
 /* Lab members block below the logo */
 .lab-members { margin-top: 4rem; }
-.lab-gallery { margin-top: 4rem; }
+.lab-gallery {
+  margin-top: 3.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
 
 .people__list { margin: 0.5rem 0 0 0; padding: 0; list-style: none; }
 .people__list li { margin: 0 0 0.35rem 0; }
@@ -115,5 +126,8 @@ import AutoGallery from '../components/core/AutoGallery.astro';
 }
 @media (max-width: 900px) {
   .research__grid, .two-col__section, .contact__section { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .lab-gallery { gap: 1.75rem; }
 }
 </style>
