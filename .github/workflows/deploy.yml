@@ -18,7 +18,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
+      # Use custom domain for correct absolute URLs and base path
+      # If you later add a repo variable named SITE_URL it will override this
+      SITE_URL: ${{ vars.SITE_URL || 'https://www.tianyuhan.ai/' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
