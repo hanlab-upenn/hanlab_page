@@ -1,9 +1,21 @@
 ---
 import { Button, Container } from '@components/odyssey-theme';
-const { title, subtitle, ctaHref = '/join', ctaText = 'Apply to Join', crestSrc, crestAlt = '', showCta = true } = Astro.props;
+
+const {
+  title,
+  subtitle,
+  ctaHref = '/join',
+  ctaText = 'Apply to Join',
+  crestSrc,
+  crestAlt = '',
+  showCta = true,
+  backgroundSrc,
+} = Astro.props;
+
+const heroBackground = backgroundSrc ?? `${import.meta.env.BASE_URL}assets/background.png`;
 ---
 
-<section class="gold-hero">
+<section class="gold-hero" style={`--hero-background: url("${heroBackground}")`}>
   <Container>
     <div class="gold-hero__inner">
       {crestSrc && <img class="gold-hero__crest" src={crestSrc} alt={crestAlt} loading="lazy" />}
@@ -20,9 +32,12 @@ const { title, subtitle, ctaHref = '/join', ctaText = 'Apply to Join', crestSrc,
 <style>
   .gold-hero {
     position: relative;
-    /* Very light blue background */
-    --hero-base: #d6e8ff; /* slightly darker light blue */
-    background-color: var(--hero-base);
+    --hero-base: #e5edf8;
+    --hero-edge-color: transparent;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.55) 100%), var(--hero-background, var(--hero-base));
+    background-size: 100% 100%, cover;
+    background-position: center, center;
+    background-repeat: no-repeat;
     color: var(--theme-on-bg);
   }
   .gold-hero__inner {
@@ -52,10 +67,15 @@ const { title, subtitle, ctaHref = '/join', ctaText = 'Apply to Join', crestSrc,
     color: #ffffff;
     border: 2px solid #101010;
     display: inline-flex;
+    box-shadow: 0 18px 32px rgba(9, 12, 18, 0.35);
+    transform: translateY(-4px);
+    transition: transform 220ms ease, box-shadow 220ms ease, background-color 150ms ease, border-color 150ms ease;
   }
   :global(.gold-hero__cta:hover) {
     background-color: #000000;
     border-color: #000000;
+    transform: translateY(-6px);
+    box-shadow: 0 22px 36px rgba(9, 12, 18, 0.45);
   }
   .gold-hero__wave {
     color: var(--hero-edge-color, var(--hero-base));
