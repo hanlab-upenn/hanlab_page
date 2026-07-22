@@ -4,55 +4,202 @@ import { Container } from '@components/odyssey-theme';
 
 const seo = {
   title: 'Publications | Han Lab (UPenn)',
-  description: 'Selected publications from Han Lab.',
+  description: 'Selected publications from Han Lab in medical artificial intelligence, imaging, and trustworthy machine learning.',
+  image: '/assets/images/news/clear/clear-overview.png',
 };
 
 const publications = [
-  // Replace with your real citations
+  {
+    year: 2026,
+    title: 'CLEAR: an auditable foundation model for radiology grounded in clinical concepts',
+    authors: 'Tianyu Han*, Riga Wu*, Yu Tian, Firas Khader, Lisa C. Adams, Keno K. Bressem, Christos Davatzikos, Jakob N. Kather, Li Shen, David A. Mankoff, Eduardo M. Barbosa Jr, Daniel Truhn',
+    venue: 'Nature Biomedical Engineering',
+    featured: true,
+    summary: 'An auditable foundation model with released code, weights, and concept resources for academic research. It represents chest X-rays through 368,294 radiological observations, enabling concept-level auditing, confounder discovery, and intervention.',
+    links: [
+      { label: 'Paper', href: 'https://www.nature.com/articles/s41551-026-01741-4' },
+      { label: 'DOI', href: 'https://doi.org/10.1038/s41551-026-01741-4' },
+      { label: 'Code', href: 'https://github.com/peterhan91/CLEAR' },
+      { label: 'Model', href: 'https://huggingface.co/peterhan91/CLEAR' },
+    ],
+  },
+  {
+    year: 2026,
+    title: 'Counterfactual diffusion models provide interpretable explanations of artificial intelligence models in pathology',
+    authors: 'L. Žigutytė, T. Lenz, T. Han, K. J. Hewitt, N. G. Reitsam, S. Foersch, et al.',
+    venue: 'Cancer Research',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1158/0008-5472.CAN-25-5645' }],
+  },
   {
     year: 2025,
-    title: 'Example Paper Title',
-    authors: 'A. Author, B. Author',
-    venue: 'Conference/Journal',
-    link: '#',
+    title: 'Medical slice transformer for improved diagnosis and explainability on 3D medical images with DINOv2',
+    authors: 'G. Müller-Franzes, F. Khader, R. Siepmann, T. Han, J. N. Kather, S. Nebelung, D. Truhn',
+    venue: 'Scientific Reports',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41598-025-09041-8' }],
   },
   {
     year: 2024,
-    title: 'Another Paper Title',
-    authors: 'C. Author, D. Author',
-    venue: 'Conference/Journal',
-    link: '#',
+    title: 'Reconstruction of patient-specific confounders in AI-based radiologic image interpretation using generative pretraining',
+    authors: 'T. Han, L. Žigutytė, L. Huck, M. S. Huppertz, R. Siepmann, et al.',
+    venue: 'Cell Reports Medicine',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1016/j.xcrm.2024.101713' }],
+  },
+  {
+    year: 2024,
+    title: 'Medical large language models are susceptible to targeted misinformation attacks',
+    authors: 'T. Han, S. Nebelung, F. Khader, T. Wang, G. Müller-Franzes, et al.',
+    venue: 'npj Digital Medicine',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41746-024-01282-7' }],
+  },
+  {
+    year: 2024,
+    title: 'Comparative analysis of multimodal large language model performance on clinical vignette questions',
+    authors: 'T. Han*, L. C. Adams*, K. K. Bressem, F. Busch, S. Nebelung, D. Truhn',
+    venue: 'JAMA',
+    links: [{ label: 'Paper', href: 'https://jamanetwork.com/journals/jama/fullarticle/2816270' }],
+  },
+  {
+    year: 2024,
+    title: 'Large language models streamline automated machine learning for clinical studies',
+    authors: 'S. Tayebi Arasteh, T. Han, M. Lotfinia, C. Kuhl, J. N. Kather, D. Truhn, S. Nebelung',
+    venue: 'Nature Communications',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41467-024-45879-8' }],
+  },
+  {
+    year: 2024,
+    title: 'On instabilities of unsupervised denoising diffusion models in magnetic resonance imaging reconstruction',
+    authors: 'T. Han, S. Nebelung, F. Khader, J. N. Kather, D. Truhn',
+    venue: 'MICCAI',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1007/978-3-031-72104-5_49' }],
+  },
+  {
+    year: 2023,
+    title: 'MedAlpaca: an open-source collection of medical conversational AI models and training data',
+    authors: 'T. Han, L. C. Adams, J.-M. Papaioannou, P. Grundmann, T. Oberhauser, et al.',
+    venue: 'arXiv',
+    links: [{ label: 'Preprint', href: 'https://arxiv.org/abs/2304.08247' }],
+  },
+  {
+    year: 2022,
+    title: 'Image prediction of disease progression for osteoarthritis by style-based manifold extrapolation',
+    authors: 'T. Han, J. N. Kather, F. Pedersoli, M. Zimmermann, S. Keil, et al.',
+    venue: 'Nature Machine Intelligence',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s42256-022-00560-x' }],
+  },
+  {
+    year: 2021,
+    title: 'Advancing diagnostic performance and clinical usability of neural networks via adversarial training and dual batch normalization',
+    authors: 'T. Han, S. Nebelung, F. Pedersoli, M. Zimmermann, M. Schulze-Hagen, et al.',
+    venue: 'Nature Communications',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41467-021-24464-3' }],
+  },
+  {
+    year: 2020,
+    title: 'Breaking medical data sharing boundaries by using synthesized radiographs',
+    authors: 'T. Han, S. Nebelung, C. Haarburger, N. Horst, S. Reinartz, et al.',
+    venue: 'Science Advances',
+    links: [{ label: 'Paper', href: 'https://doi.org/10.1126/sciadv.abb7973' }],
   },
 ];
+
+const years = [...new Set(publications.map((publication) => publication.year))];
 ---
 
 <Layout {seo}>
   <Container>
     <section class="publications__section">
-      <h1>Publications</h1>
-      <p>Replace the examples below with your citations.</p>
-      <ul class="pubs__list">
-        {publications.map((p) => (
-          <li class="pub-item">
-            <p class="pub-item__title">{p.title}</p>
-            <p class="pub-item__meta">{p.authors} • {p.venue} • {p.year}</p>
-            {p.link && <p><a href={p.link} target="_blank" rel="noopener noreferrer">Link</a></p>}
-          </li>
-        ))}
-      </ul>
+      <p class="publications__eyebrow">Research output</p>
+      <h1>Selected publications</h1>
+      <p class="publications__intro">
+        Work from Han Lab and collaborators spanning auditable medical AI, generative models,
+        multimodal reasoning, and robust clinical machine learning. An asterisk denotes equal contribution.
+      </p>
+
+      {years.map((year) => (
+        <section class="publication-year" aria-labelledby={`publications-${year}`}>
+          <h2 id={`publications-${year}`}>{year}</h2>
+          <ol class="pubs__list">
+            {publications.filter((publication) => publication.year === year).map((publication) => (
+              <li class:list={['pub-item', { 'pub-item--featured': publication.featured }]}>
+                {publication.featured && <p class="pub-item__badge">Latest · Open access</p>}
+                <h3 class="pub-item__title">{publication.title}</h3>
+                <p class="pub-item__authors">{publication.authors}</p>
+                <p class="pub-item__venue"><em>{publication.venue}</em> · {publication.year}</p>
+                {publication.summary && <p class="pub-item__summary">{publication.summary}</p>}
+                <div class="pub-item__links" aria-label={`Resources for ${publication.title}`}>
+                  {publication.links.map((link) => (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+
+      <p class="publications__complete">
+        See the complete record on
+        <a href="https://scholar.google.com/citations?user=Hxm_OpAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        or
+        <a href="https://www.ncbi.nlm.nih.gov/myncbi/tianyu.han.1/bibliography/public/" target="_blank" rel="noopener noreferrer">NCBI My Bibliography</a>.
+      </p>
     </section>
   </Container>
 </Layout>
 
 <style>
-  .publications__section { margin: var(--section-margin) auto; }
-  .pubs__list {
-    margin: 1rem 0 0 0;
-    padding: 0;
-    list-style: none;
+  .publications__section { max-width: 960px; margin: var(--section-margin) auto; }
+  .publications__eyebrow {
+    margin-bottom: 0.5rem;
+    color: #990000;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
-  .pub-item { margin: 0 0 1rem 0; }
-  .pub-item__title { font-weight: 600; margin: 0 0 0.25rem 0; }
-  .pub-item__meta { opacity: 0.84; margin: 0; }
+  .publications__section h1 { margin-top: 0; }
+  .publications__intro { max-width: 760px; font-size: 1.1rem; }
+  .publication-year { margin-top: 3.5rem; }
+  .publication-year > h2 {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #011f5b;
+    color: #011f5b;
+    font-size: 1.15rem;
+  }
+  .pubs__list { margin: 0; padding: 0; list-style: none; }
+  .pub-item { padding: 1.5rem 0; border-bottom: 1px solid #d7dce3; }
+  .pub-item--featured {
+    margin-top: 1.25rem;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, #f7f8fb 0%, #edf2f7 100%);
+    border: 1px solid rgba(1, 31, 91, 0.15);
+    border-left: 5px solid #990000;
+    border-radius: 0.5rem;
+  }
+  .pub-item__badge {
+    margin: 0 0 0.6rem;
+    color: #990000;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .pub-item__title { margin: 0; font-size: 1.15rem; line-height: 1.4; }
+  .pub-item__authors, .pub-item__venue, .pub-item__summary { margin: 0.45rem 0 0; }
+  .pub-item__authors { font-size: 0.94rem; }
+  .pub-item__venue { color: rgba(0, 0, 0, 0.72); }
+  .pub-item__summary { max-width: 800px; }
+  .pub-item__links { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.9rem; }
+  .pub-item__links a {
+    padding: 0.3rem 0.7rem;
+    border: 1px solid #011f5b;
+    border-radius: 999px;
+    color: #011f5b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .pub-item__links a:hover { background: #011f5b; color: white; }
+  .publications__complete { margin-top: 3rem; }
+  .publications__complete a { margin-left: 0.2rem; }
 </style>
-

@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Button, Container } from '@components/odyssey-theme';
+
+const cvPath = `${import.meta.env.BASE_URL}assets/pdf/CV_TianyuHan.pdf`;
+const seo = {
+  title: 'Curriculum Vitae | Tianyu Han',
+  description: 'Curriculum vitae of Tianyu Han, Assistant Professor of Radiology at the University of Pennsylvania.',
+};
+---
+
+<Layout {seo}>
+  <Container>
+    <section class="cv-page">
+      <p class="cv-page__eyebrow">Curriculum vitae</p>
+      <h1>Tianyu Han, PhD</h1>
+      <p class="cv-page__lead">
+        Assistant Professor of Radiology (Tenure Track), Perelman School of Medicine,
+        University of Pennsylvania.
+      </p>
+      <p class="cv-page__updated">Updated July 22, 2026.</p>
+      <div class="cv-page__actions">
+        <Button href={cvPath} newTab>Open CV as PDF</Button>
+        <Button href="https://scholar.google.com/citations?user=Hxm_OpAAAAAJ&hl=en" newTab outlined>Google Scholar</Button>
+        <Button href="https://www.ncbi.nlm.nih.gov/myncbi/tianyu.han.1/bibliography/public/" newTab outlined>NCBI Bibliography</Button>
+      </div>
+      <iframe
+        class="cv-page__viewer"
+        src={cvPath}
+        title="Curriculum vitae of Tianyu Han"
+      >
+        <p>Your browser cannot display the PDF. <a href="/assets/pdf/CV_TianyuHan.pdf">Download the CV</a>.</p>
+      </iframe>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+  .cv-page { max-width: 1050px; margin: var(--section-margin) auto; }
+  .cv-page__eyebrow {
+    margin-bottom: 0.5rem;
+    color: #990000;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .cv-page h1 { margin-top: 0; }
+  .cv-page__lead { max-width: 760px; font-size: 1.1rem; }
+  .cv-page__updated { color: rgba(0, 0, 0, 0.65); }
+  .cv-page__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+  .cv-page__viewer {
+    width: 100%;
+    min-height: 1100px;
+    border: 1px solid #d7dce3;
+    border-radius: 0.5rem;
+    background: #f7f8fb;
+  }
+  @media (max-width: 700px) {
+    .cv-page__viewer { min-height: 760px; }
+  }
+</style>

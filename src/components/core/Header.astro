@@ -6,45 +6,54 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 <script type="module">
   const bodyElement = document.querySelector('body');
-  const menuButton = document.querySelector('#menuButton')
+  const menuButton = document.querySelector('#menuButton');
   const navHeader = document.querySelector('#odysseyNavHeader');
   const menuButtonIconHam = document.querySelector('#menuButtonIconHam');
   const menuButtonIconClose = document.querySelector('#menuButtonIconClose');
+  const menuLinks = navHeader?.querySelectorAll('nav a') ?? [];
   let scrollPosition = 0;
 
   if (menuButton) {
-    menuButton.addEventListener('click', toggleMenu)
+    menuButton.addEventListener('click', toggleMenu);
+    menuLinks.forEach((link) => link.addEventListener('click', closeMenu));
   }
 
   function toggleMenu() {
-    menuButtonIconHam.toggleAttribute('hidden');
-    menuButtonIconClose.toggleAttribute('hidden');
-    
-    if (navHeader.hasAttribute('mobile-menu-open', true)) {
-      menuButton.title = "Open Main Menu"
-      // unlock scroll position
-      bodyElement.style.removeProperty('overflow');
-      bodyElement.style.removeProperty('position');
-      bodyElement.style.removeProperty('top');
-      bodyElement.style.removeProperty('width');
-      window.scrollTo(0, scrollPosition);
-    } else {
-      menuButton.title = "Close Main Menu"
-      // lock scroll position
-      scrollPosition = window.pageYOffset;
-      bodyElement.style.overflow = 'hidden';
-      bodyElement.style.position = 'fixed';
-      bodyElement.style.top = `-${scrollPosition}px`;
-      bodyElement.style.width = '100%';
-    }
-    
-    navHeader.toggleAttribute('mobile-menu-open');
+    if (navHeader.hasAttribute('mobile-menu-open')) closeMenu();
+    else openMenu();
   }
-</script>  
+
+  function openMenu() {
+    scrollPosition = window.pageYOffset;
+    menuButtonIconHam.setAttribute('hidden', '');
+    menuButtonIconClose.removeAttribute('hidden');
+    menuButton.title = 'Close Main Menu';
+    menuButton.setAttribute('aria-expanded', 'true');
+    bodyElement.style.overflow = 'hidden';
+    bodyElement.style.position = 'fixed';
+    bodyElement.style.top = `-${scrollPosition}px`;
+    bodyElement.style.width = '100%';
+    navHeader.setAttribute('mobile-menu-open', '');
+  }
+
+  function closeMenu() {
+    if (!navHeader.hasAttribute('mobile-menu-open')) return;
+    menuButtonIconHam.removeAttribute('hidden');
+    menuButtonIconClose.setAttribute('hidden', '');
+    menuButton.title = 'Open Main Menu';
+    menuButton.setAttribute('aria-expanded', 'false');
+    bodyElement.style.removeProperty('overflow');
+    bodyElement.style.removeProperty('position');
+    bodyElement.style.removeProperty('top');
+    bodyElement.style.removeProperty('width');
+    navHeader.removeAttribute('mobile-menu-open');
+    window.scrollTo(0, scrollPosition);
+  }
+</script>
 
 <header id="odysseyNavHeader" class={`${rightMenu ? "header--right" : ``.trim()}`}>
   <div class="header-logo-menu__container">
-  {navData && <button id="menuButton" title="Open Main Menu">
+  {navData && <button id="menuButton" title="Open Main Menu" aria-expanded="false" aria-controls="headerNavigation">
     <span id="menuButtonIconHam">
       <Icon name="ic:baseline-menu" width="24px" height="24px" />
     </span>
@@ -57,7 +66,7 @@ const BASE_URL = import.meta.env.BASE_URL;
     </slot>
   </a>
   </div>
-  <div class="header-nav__container">
+  <div id="headerNavigation" class="header-nav__container">
     <slot name="nav">
       {navData && <nav>
         <ul>
@@ -100,13 +109,17 @@ const BASE_URL = import.meta.env.BASE_URL;
     z-index: 100;
   }
   #menuButton {
-    outline: none;
     border: none;
     background-color: transparent;
     margin-right: 0.5rem;
     display: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+  }
+  #menuButton:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+    border-radius: 0.25rem;
   }
   #menuButton > span {
     color: var(--theme-on-bg);
@@ -131,7 +144,10 @@ const BASE_URL = import.meta.env.BASE_URL;
   nav ul li a:hover {
     opacity: 1;
   }
-  @media(max-width: 600px) {
+  @media(max-width: 1000px) {
+    header {
+      padding: 0.9rem 1.25rem;
+    }
     #menuButton {
       display: block;  
       z-index: 100;

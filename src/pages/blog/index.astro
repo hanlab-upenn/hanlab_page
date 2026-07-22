@@ -6,10 +6,10 @@ import {
 	BlogPostsList,
 } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
-import NewsletterForm from '../../components/forms/NewsletterForm.astro';
 
 const posts = await Astro.glob('./posts/*.mdx').then(posts =>
 	posts
+		.filter(({ frontmatter }) => frontmatter.labNews === true)
 		.map(({ frontmatter, url }) => ({
 			title: frontmatter.title,
 			description: frontmatter.description,
@@ -27,23 +27,22 @@ const posts = await Astro.glob('./posts/*.mdx').then(posts =>
 );
 
 const seo = {
-	title: 'Blog | Astro Odyssey Theme',
-	description: 'Astro Odyssey Theme Blog Page',
+	title: 'News | Han Lab (UPenn)',
+	description: 'Research news and updates from Han Lab at the University of Pennsylvania.',
+	image: '/assets/images/news/clear/clear-overview.png',
 };
 ---
 
 <Layout {seo}>
 	<Container>
 		<TextCardSection>
-			<h1>Odyssey Blog</h1>
+			<h1>Han Lab News</h1>
 			<p>
-				View our blog to stay up to date on the latest news about our business.
-				Want to be the first to hear about a new blog post? Join our newsletter!
+				Research updates and announcements from Han Lab at the University of Pennsylvania.
 			</p>
-			<NewsletterForm />
 		</TextCardSection>
 		<section class="blog-posts-list__section">
-			<h2>Recent Posts</h2>
+			<h2>Recent News</h2>
 			<BlogPostsList posts={posts} />
 		</section>
 	</Container>
