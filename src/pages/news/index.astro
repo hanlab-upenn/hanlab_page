@@ -6,10 +6,10 @@ import {
 	BlogPostsList,
 } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
-import NewsletterForm from '../../components/forms/NewsletterForm.astro';
 
 const posts = await Astro.glob('../blog/posts/*.mdx').then(posts =>
 	posts
+		.filter(({ frontmatter }) => frontmatter.labNews === true)
 		.map(({ frontmatter, url }) => ({
 			title: frontmatter.title,
 			description: frontmatter.description,
@@ -29,6 +29,7 @@ const posts = await Astro.glob('../blog/posts/*.mdx').then(posts =>
 const seo = {
   title: 'News | Han Lab (UPenn)',
   description: 'News and updates from Han Lab.',
+  image: '/assets/images/news/clear/clear-overview.png',
 };
 ---
 
@@ -39,7 +40,6 @@ const seo = {
 			<p>
 				Updates and announcements from Han Lab at the University of Pennsylvania.
 			</p>
-			<NewsletterForm />
 		</TextCardSection>
 		<section class="blog-posts-list__section">
 			<h2>Recent News</h2>

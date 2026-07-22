@@ -4,7 +4,11 @@ const {post} = Astro.props;
 
 <li class="blog-post__preview">
   <a href={post.href && post.href.startsWith('/') ? `${import.meta.env.BASE_URL}${post.href.slice(1)}` : post.href}>
-    <img src={post.featuredImage && post.featuredImage.startsWith('/') ? `${import.meta.env.BASE_URL}${post.featuredImage.slice(1)}` : post.featuredImage} />
+    <img
+      src={post.featuredImage && post.featuredImage.startsWith('/') ? `${import.meta.env.BASE_URL}${post.featuredImage.slice(1)}` : post.featuredImage}
+      alt={post.title}
+      loading="lazy"
+    />
     <h3>{post.title}</h3>
     {post.excerpt && <p>{post.excerpt}</p>}
   </a>

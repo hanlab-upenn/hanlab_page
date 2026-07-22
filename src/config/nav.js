@@ -1,10 +1,7 @@
 export const nav = [
-  { title: 'Home', slug: '/' },
-  { title: 'People', slug: '/people' },
-  { title: 'Research', slug: '/research' },
-  { title: 'Publications', slug: '/publications' },
-  { title: 'Software', slug: '/software' },
-  { title: 'News', slug: '/news' },
-  { title: 'Join', slug: '/join' },
-  { title: 'Contact', slug: '/contact' },
+	{ title: 'Research', slug: '/#research' },
+	{ title: 'Team', slug: '/#lab-members' },
+	{ title: 'Publications', slug: '/publications' },
+	{ title: 'News', slug: '/news' },
+	{ title: 'CV', slug: '/cv' },
 ];

@@ -1,0 +1,35 @@
+---
+layout: '../../../layouts/Post.astro'
+title: 'CLEAR is published in Nature Biomedical Engineering'
+description: 'CLEAR grounds chest-X-ray predictions in clinical concepts so researchers can inspect, audit, and intervene on model reasoning.'
+publishDate: July 22, 2026
+featuredImage: '/assets/images/news/clear/clear-overview.png'
+excerpt: 'An AI model can be right for the wrong reason. CLEAR makes the reason visible through 368,294 radiological observations.'
+labNews: true
+tags:
+  - Research
+  - Medical AI
+---
+
+An AI model can be right for the wrong reason. **CLEAR makes the reason visible.**
+
+Today, our work introducing **CLEAR (Concept-Level Embeddings for Auditable Radiology)** was published open access in _Nature Biomedical Engineering_.
+
+Most medical-imaging foundation models make predictions using hidden features that are difficult for clinicians and researchers to inspect. CLEAR instead represents a chest X-ray through **368,294 radiological observations**, allowing each prediction to be decomposed into clinically meaningful concepts.
+
+We trained CLEAR on more than **0.87 million image–report pairs from 239,391 patients** and externally evaluated it across physician-annotated datasets from the United States, Europe, and Asia. The framework supports auditable zero-shot prediction, systematic identification of confounding associations, and concept bottleneck models.
+
+One result illustrates why this matters. For enlarged cardiomediastinum, CLEAR exposed an inappropriate reliance on atelectasis-related concepts. Retaining clinically appropriate mediastinal concepts improved AUROC from **0.727 to 0.784** while the image encoder remained frozen and only the lightweight classifier was refitted.
+
+This work moves medical AI from systems that only produce predictions toward systems whose reasoning can be inspected, challenged, and corrected.
+
+## Read and use CLEAR
+
+- [Open-access paper in _Nature Biomedical Engineering_](https://www.nature.com/articles/s41551-026-01741-4)
+- [Code on GitHub](https://github.com/peterhan91/CLEAR)
+- [Model and concept resources on Hugging Face](https://huggingface.co/peterhan91/CLEAR)
+- [DOI: 10.1038/s41551-026-01741-4](https://doi.org/10.1038/s41551-026-01741-4)
+
+The study was co-led by Tianyu Han and Riga Wu with collaborators across the University of Pennsylvania, RWTH Aachen University, Technical University of Munich, Technical University Dresden, Heidelberg University Hospital, and partner institutions.
+
+_Featured image: Figure 1 from [Han et al., Nature Biomedical Engineering (2026)](https://www.nature.com/articles/s41551-026-01741-4), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)._
