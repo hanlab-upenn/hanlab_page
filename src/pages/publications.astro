@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Page.astro';
 import { Container } from '@components/odyssey-theme';
+import { publications } from '../data/publications.js';
 
 const seo = {
   title: 'Publications | Han Lab (UPenn)',
@@ -8,101 +9,7 @@ const seo = {
   image: '/assets/images/news/clear/clear-overview.png',
 };
 
-const publications = [
-  {
-    year: 2026,
-    title: 'CLEAR: an auditable foundation model for radiology grounded in clinical concepts',
-    authors: 'Tianyu Han*, Riga Wu*, Yu Tian, Firas Khader, Lisa C. Adams, Keno K. Bressem, Christos Davatzikos, Jakob N. Kather, Li Shen, David A. Mankoff, Eduardo M. Barbosa Jr, Daniel Truhn',
-    venue: 'Nature Biomedical Engineering',
-    featured: true,
-    summary: 'An auditable foundation model with released code, weights, and concept resources for academic research. It represents chest X-rays through 368,294 radiological observations, enabling concept-level auditing, confounder discovery, and intervention.',
-    links: [
-      { label: 'Paper', href: 'https://www.nature.com/articles/s41551-026-01741-4' },
-      { label: 'DOI', href: 'https://doi.org/10.1038/s41551-026-01741-4' },
-      { label: 'Code', href: 'https://github.com/peterhan91/CLEAR' },
-      { label: 'Model', href: 'https://huggingface.co/peterhan91/CLEAR' },
-    ],
-  },
-  {
-    year: 2026,
-    title: 'Counterfactual diffusion models provide interpretable explanations of artificial intelligence models in pathology',
-    authors: 'L. Žigutytė, T. Lenz, T. Han, K. J. Hewitt, N. G. Reitsam, S. Foersch, et al.',
-    venue: 'Cancer Research',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1158/0008-5472.CAN-25-5645' }],
-  },
-  {
-    year: 2025,
-    title: 'Medical slice transformer for improved diagnosis and explainability on 3D medical images with DINOv2',
-    authors: 'G. Müller-Franzes, F. Khader, R. Siepmann, T. Han, J. N. Kather, S. Nebelung, D. Truhn',
-    venue: 'Scientific Reports',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41598-025-09041-8' }],
-  },
-  {
-    year: 2024,
-    title: 'Reconstruction of patient-specific confounders in AI-based radiologic image interpretation using generative pretraining',
-    authors: 'T. Han, L. Žigutytė, L. Huck, M. S. Huppertz, R. Siepmann, et al.',
-    venue: 'Cell Reports Medicine',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1016/j.xcrm.2024.101713' }],
-  },
-  {
-    year: 2024,
-    title: 'Medical large language models are susceptible to targeted misinformation attacks',
-    authors: 'T. Han, S. Nebelung, F. Khader, T. Wang, G. Müller-Franzes, et al.',
-    venue: 'npj Digital Medicine',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41746-024-01282-7' }],
-  },
-  {
-    year: 2024,
-    title: 'Comparative analysis of multimodal large language model performance on clinical vignette questions',
-    authors: 'T. Han*, L. C. Adams*, K. K. Bressem, F. Busch, S. Nebelung, D. Truhn',
-    venue: 'JAMA',
-    links: [{ label: 'Paper', href: 'https://jamanetwork.com/journals/jama/fullarticle/2816270' }],
-  },
-  {
-    year: 2024,
-    title: 'Large language models streamline automated machine learning for clinical studies',
-    authors: 'S. Tayebi Arasteh, T. Han, M. Lotfinia, C. Kuhl, J. N. Kather, D. Truhn, S. Nebelung',
-    venue: 'Nature Communications',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41467-024-45879-8' }],
-  },
-  {
-    year: 2024,
-    title: 'On instabilities of unsupervised denoising diffusion models in magnetic resonance imaging reconstruction',
-    authors: 'T. Han, S. Nebelung, F. Khader, J. N. Kather, D. Truhn',
-    venue: 'MICCAI',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1007/978-3-031-72104-5_49' }],
-  },
-  {
-    year: 2023,
-    title: 'MedAlpaca: an open-source collection of medical conversational AI models and training data',
-    authors: 'T. Han, L. C. Adams, J.-M. Papaioannou, P. Grundmann, T. Oberhauser, et al.',
-    venue: 'arXiv',
-    links: [{ label: 'Preprint', href: 'https://arxiv.org/abs/2304.08247' }],
-  },
-  {
-    year: 2022,
-    title: 'Image prediction of disease progression for osteoarthritis by style-based manifold extrapolation',
-    authors: 'T. Han, J. N. Kather, F. Pedersoli, M. Zimmermann, S. Keil, et al.',
-    venue: 'Nature Machine Intelligence',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s42256-022-00560-x' }],
-  },
-  {
-    year: 2021,
-    title: 'Advancing diagnostic performance and clinical usability of neural networks via adversarial training and dual batch normalization',
-    authors: 'T. Han, S. Nebelung, F. Pedersoli, M. Zimmermann, M. Schulze-Hagen, et al.',
-    venue: 'Nature Communications',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1038/s41467-021-24464-3' }],
-  },
-  {
-    year: 2020,
-    title: 'Breaking medical data sharing boundaries by using synthesized radiographs',
-    authors: 'T. Han, S. Nebelung, C. Haarburger, N. Horst, S. Reinartz, et al.',
-    venue: 'Science Advances',
-    links: [{ label: 'Paper', href: 'https://doi.org/10.1126/sciadv.abb7973' }],
-  },
-];
-
-const years = [...new Set(publications.map((publication) => publication.year))];
+const years = [...new Set(publications.map((publication) => publication.year))].sort((a, b) => b - a);
 ---
 
 <Layout {seo}>
@@ -111,8 +18,9 @@ const years = [...new Set(publications.map((publication) => publication.year))];
       <p class="publications__eyebrow">Research output</p>
       <h1>Selected publications</h1>
       <p class="publications__intro">
-        Work from Han Lab and collaborators spanning auditable medical AI, generative models,
-        multimodal reasoning, and robust clinical machine learning. An asterisk denotes equal contribution.
+        A curated selection of {publications.length} first-, corresponding-, and co-authored works
+        spanning auditable medical AI, generative models, multimodal reasoning, and robust clinical
+        machine learning. An asterisk denotes equal contribution.
       </p>
 
       {years.map((year) => (
@@ -127,8 +35,15 @@ const years = [...new Set(publications.map((publication) => publication.year))];
                 <p class="pub-item__venue"><em>{publication.venue}</em> · {publication.year}</p>
                 {publication.summary && <p class="pub-item__summary">{publication.summary}</p>}
                 <div class="pub-item__links" aria-label={`Resources for ${publication.title}`}>
-                  {publication.links.map((link) => (
-                    <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                  {publication.links?.map((link) => (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${link.label}: ${publication.title}`}
+                    >
+                      {link.label}
+                    </a>
                   ))}
                 </div>
               </li>
@@ -200,6 +115,10 @@ const years = [...new Set(publications.map((publication) => publication.year))];
     text-decoration: none;
   }
   .pub-item__links a:hover { background: #011f5b; color: white; }
+  .pub-item__links a:focus-visible {
+    outline: 3px solid #990000;
+    outline-offset: 3px;
+  }
   .publications__complete { margin-top: 3rem; }
   .publications__complete a { margin-left: 0.2rem; }
 </style>
